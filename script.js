@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', debounce(handleScrollAnimation));
     window.addEventListener('load', handleScrollAnimation);
 
-    function loadPlaces(filter = 'all', append = false) {
+    function loadPlaces(filter = 'waterfall', append = false) {
         const placesGrid = document.getElementById('places-grid');
     
         // Jika append adalah false, maka kita reset kontennya.
