@@ -9,6 +9,27 @@ body {
     color: #fff;
 }
 
+#view-more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#view-more-btn:hover {
+    background-color: #45a049;
+}
+
+#view-more-btn:focus {
+    outline: none;
+}
+
 header {
     position: absolute;
     top: 0;
@@ -276,7 +297,7 @@ nav ul li a:hover::after {
 .places-grid {
     display: grid;
     margin: 0px 70px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     grid-template-columns: repeat(3, 1fr);
     /* justify-content: center; */
     gap: 20px;
