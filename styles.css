@@ -893,6 +893,10 @@ nav ul li a:hover::after {
     .package-info .price {
         font-size: 10px;
     }
+
+    .tour-packages-grid {
+        margin: 0px 20px;
+    }
 }
 
 /* Hamburger Icon Styles */
