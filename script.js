@@ -124,26 +124,37 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleScrollAnimation() {
         const elements = document.querySelectorAll('.fade-in');
         elements.forEach((element) => {
-          if (isElementInViewport(element)) {
-            element.classList.add('is-visible');
-          }
+            // Cek apakah elemen sudah memiliki kelas 'is-visible'
+            if (!element.classList.contains('is-visible')) {
+                // Jika belum, tambahkan animasi
+                if (isElementInViewport(element)) {
+                    element.classList.add('is-visible');
+                }
+            }
         });
     }
 
     window.addEventListener('scroll', debounce(handleScrollAnimation));
     window.addEventListener('load', handleScrollAnimation);
 
-    function loadPlaces(filter = 'all') {
+    function loadPlaces(filter = 'all', append = false) {
         const placesGrid = document.getElementById('places-grid');
-        placesGrid.innerHTML = ''; // Clear previous content
-        
+    
+        // Jika append adalah false, maka kita reset kontennya.
+        if (!append) {
+            placesGrid.innerHTML = ''; // Clear previous content
+        }
+    
         const filteredPlaces = filter === 'all' 
             ? places 
             : places.filter(place => place.category === filter);
-
-        filteredPlaces.slice(0, visibleCount).forEach(place => {
+    
+        // Menambahkan gambar baru dengan animasi hanya untuk item yang baru ditambahkan
+        const newPlaces = filteredPlaces.slice(append ? visibleCount - increment : 0, visibleCount);
+    
+        newPlaces.forEach(place => {
             const card = document.createElement('div');
-            card.classList.add('place-card', 'fade-in');
+            card.classList.add('place-card', 'fade-in'); // Animasi hanya untuk gambar baru
             card.setAttribute('data-category', place.category);
             
             card.innerHTML = `
@@ -154,11 +165,11 @@ document.addEventListener("DOMContentLoaded", function () {
             
             placesGrid.appendChild(card);
         });
-
+    
         updateViewMoreButton(filteredPlaces.length);
-        setTimeout(handleScrollAnimation, 100);
+        setTimeout(handleScrollAnimation, 100); // Apply scroll animation after content is loaded
     }
-
+    
     function updateViewMoreButton(totalCount) {
         const viewMoreBtn = document.getElementById('view-more-btn');
         if (visibleCount < totalCount) {
@@ -171,8 +182,22 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleViewMore() {
         visibleCount += increment;
         const currentFilter = document.querySelector('.filter-button.active').getAttribute('data-filter');
-        loadPlaces(currentFilter);
+        
+        // Show loading spinner
+        const placesGrid = document.getElementById('places-grid');
+        const loadingSpinner = document.createElement('div');
+        loadingSpinner.classList.add('loading-spinner');
+        placesGrid.appendChild(loadingSpinner);
+        
+        // Simulate a delay to show the loading effect (remove this in production)
+        setTimeout(() => {
+            // Remove loading spinner
+            placesGrid.removeChild(loadingSpinner);
+    
+            loadPlaces(currentFilter, true); // Load more places based on current filter, append = true for View More
+        }, 1000); // Simulated 1-second delay
     }
+        
 
     const viewMoreBtn = document.createElement('button');
     viewMoreBtn.id = 'view-more-btn';
