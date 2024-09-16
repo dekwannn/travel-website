@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
         updateViewMoreButton(filteredPlaces.length);
         setTimeout(handleScrollAnimation, 100); // Apply scroll animation after content is loaded
     }
-    
+
     function updateViewMoreButton(totalCount) {
         const viewMoreBtn = document.getElementById('view-more-btn');
         if (visibleCount < totalCount) {
@@ -267,3 +267,4 @@ function handleScrollAnimation() {
       }
     });
   }
+

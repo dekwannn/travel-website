@@ -198,7 +198,7 @@ nav ul li a:hover::after {
 
 .popular-places {
     padding: 20px 20px;
-    background-color: #fff;
+    background-color: #f9f9f9;
     /* text-align: center; */
 }
 
@@ -568,7 +568,280 @@ nav ul li a:hover::after {
     background-color: #ff6f61;
 }
 
+/* Contact Us Section */
+.contact-us {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
 
+.container-contact-us {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 50px;
+    /* flex-direction: column; */
+}
+
+.contact-info {
+    max-width: 45%;
+}
+
+.contact-info h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff6f61;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.contact-info h2 {
+    font-family: "Rowdies", sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 20px; */
+}
+
+.icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background-color: #ff6f61;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    margin-top: -30px;
+}
+
+.icon-wrapper i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.contact-item h4 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.contact-item p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #777;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    font-size: 24px;
+    color: #ff6f61;
+    text-decoration: none;
+}
+
+.contact-form {
+    max-width: 45%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form button.btn {
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button.btn:hover {
+    background-color: #e2554f;
+}
+
+.contact-form p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #222;
+    padding: 60px 20px;
+    color: #ccc;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container-footer {
+    max-width: 1200px;
+    margin: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    max-width: 23%;
+    margin-bottom: 20px;
+}
+
+.footer-column h3, .footer-column h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-column a {
+    color: #ff9800;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    color: #ff9800;
+}
+
+.tag-cloud a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px 5px 0 0;
+    background-color: #333;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.tag-cloud a:hover {
+    background-color: #ff9800;
+}
+
+.subscribe-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.subscribe-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 100%;
+}
+
+.subscribe-form button {
+    background-color: #ff9800;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.subscribe-form button i {
+    color: #fff;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    font-size: 18px;
+    color: #ff9800;
+}
+
+.social-links a:hover {
+    color: #fff;
+}
 
 /* For Tablets and Devices with screen width of 768px or less */
 @media (max-width: 768px) {
@@ -687,6 +960,25 @@ nav ul li a:hover::after {
     .package-card {
         width: 80%; /* Ubah menjadi satu kolom di layar kecil */
         margin-bottom: 20px;
+    }
+
+    .container-contact-us {
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 20px;;
+    }
+
+    .contact-info, .contact-form {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .footer-column {
+        max-width: 45%;
     }
 }
 
@@ -896,6 +1188,45 @@ nav ul li a:hover::after {
 
     .tour-packages-grid {
         margin: 0px 20px;
+    }
+
+    .icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon-wrapper i {
+        font-size: 16px;
+    }
+
+    .contact-form button.btn {
+        padding: 8px 16px;
+    }
+
+    .footer-column {
+        max-width: 100%;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+    }
+
+    .subscribe-form input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .subscribe-form button {
+        border-radius: 5px;
+    }
+
+    .container-footer {
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .footer-column p {
+        text-align: left;
     }
 }
 
