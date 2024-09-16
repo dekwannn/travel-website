@@ -378,9 +378,9 @@ nav ul li a:hover::after {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    /* align-items: flex-start; */
 }
 
 .top-values-content {
@@ -455,6 +455,119 @@ nav ul li a:hover::after {
     font-size: 14px;
     color: #777;
 }
+
+/* Section 4 */
+.tour-packages {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.tour-packages-header h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff6f61;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.tour-packages-header h2 {
+    font-family: "Rowdies", sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tour-packages-header p {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #777;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.tour-packages-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 0px;
+    flex-wrap: wrap;
+    margin: 0px 40px;
+}
+
+.package-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 30%; /* Set width to fit three columns */
+    transition: transform 0.3s ease;
+}
+
+.package-card:hover {
+    transform: scale(1.05); /* Add hover effect */
+}
+
+.package-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.package-info {
+    padding: 20px;
+    position: relative;
+}
+
+.package-info .price {
+    background-color: #fff;
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.package-info h4 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.package-info p {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5;
+}
+
+.package-info .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.package-info .btn:hover {
+    background-color: #ff6f61;
+}
+
 
 
 /* For Tablets and Devices with screen width of 768px or less */
@@ -564,6 +677,16 @@ nav ul li a:hover::after {
 
     .value-card p {
        width: 100%;
+    }
+
+    .tour-packages-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .package-card {
+        width: 80%; /* Ubah menjadi satu kolom di layar kecil */
+        margin-bottom: 20px;
     }
 }
 
@@ -745,6 +868,31 @@ nav ul li a:hover::after {
         width: 100%;
         text-align: center;
      }
+
+     .package-card {
+        width: 100%; /* Lebarkan menjadi 100% untuk ponsel */
+    }
+
+    .package-card img {
+        height: 200px; /* Sesuaikan tinggi gambar di ponsel */
+    }
+
+    .package-info .price {
+        font-size: 12px; /* Kecilkan ukuran font pada harga di ponsel */
+    }
+
+    .package-info .btn {
+        padding: 8px 16px;
+        font-size: 12px; /* Sesuaikan ukuran tombol di ponsel */
+    }
+
+    .tour-packages-header h2 {
+        font-size: 30px;
+    }
+
+    .package-info .price {
+        font-size: 10px;
+    }
 }
 
 /* Hamburger Icon Styles */
