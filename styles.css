@@ -568,6 +568,67 @@ nav ul li a:hover::after {
     background-color: #ff6f61;
 }
 
+.photo-gallery {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.container-gallery {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 50px;
+    flex-direction: column;
+}
+
+.gallery-header {
+    text-align: center;
+    /* margin-bottom: 40px; */
+}
+
+.gallery-header h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff6f61;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.gallery-header h2 {
+    font-family: "Rowdies", sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.gallery-header p {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #777;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
 /* Contact Us Section */
 .contact-us {
     padding: 60px 20px;
@@ -962,6 +1023,12 @@ nav ul li a:hover::after {
         margin-bottom: 20px;
     }
 
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar tablet */
+        gap: 20px;
+        margin: 0 30px;
+    }
+
     .container-contact-us {
         flex-direction: column;
         align-items: center;
@@ -980,6 +1047,8 @@ nav ul li a:hover::after {
     .footer-column {
         max-width: 45%;
     }
+
+
 }
 
 @media (max-width: 698px) {
@@ -1188,6 +1257,12 @@ nav ul li a:hover::after {
 
     .tour-packages-grid {
         margin: 0px 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 1 kolom pada layar ponsel */
+        gap: 20px;
+        margin: 0 5px;
     }
 
     .icon-wrapper {
