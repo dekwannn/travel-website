@@ -1,0 +1,152 @@
+
+body {
+    font-family: Montserrat, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.step-indicator .step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.step-indicator span {
+      background-color: #ddd;
+      padding: 10px;
+      margin-right: 5px;
+      border-radius: 20%;
+  }
+
+.step-indicator .line {
+    height: 2px;
+    width: 30px;
+    background-color: #ddd;
+}
+
+.step-indicator .line.active {
+    background-color: #4caf50;
+}
+
+.step-indicator .step.active {
+    background-color: #4caf50;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ddd;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.whatsapp-button:hover {
+    background-color: #1EBE52;
+}
+
+.whatsapp-button .whatsapp-icon {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.checkmark-container {
+    width: 60px;  /* Diameter lingkaran */
+    height: 60px; /* Diameter lingkaran */
+    border-radius: 50%; /* Membuat lingkaran */
+    background-color: #25D366; /* Warna latar belakang (hijau WhatsApp) */
+    display: flex; /* Menggunakan flexbox untuk center content */
+    justify-content: center; /* Center secara horizontal */
+    align-items: center; /* Center secara vertikal */
+    margin: 20px auto; /* Centerkan di halaman */
+}
+
+.checkmark {
+    width: 30px; /* Lebar centang */
+    height: 30px; /* Tinggi centang */
+    border: solid white; /* Warna dan jenis garis */
+    border-width: 0 4px 4px 0; /* Membuat bentuk centang */
+    transform: rotate(45deg); /* Memutar centang */
+}
+
+@media (max-width: 768px) {
+    input, textarea {
+        width: 95%;
+    }
+}

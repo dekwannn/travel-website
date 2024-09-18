@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Booking Wisata</title>
+    <link rel="stylesheet" href="/booking/styles.css">
+</head>
+<body>
+
+  <div class="header">
+    <h2>Booking Now</h2>
+    <p>Please fill out this form with the required information!</p>
+  </div>
+
+
+  <div class="step-indicator">
+      <div class="step active">1</div>
+      <div class="line active"></div>
+      <div class="step">2</div>
+      <div class="line"></div>
+      <div class="step">3</div>
+      <div class="line"></div>
+      <div class="step">4</div>
+      <div class="line"></div>
+      <div class="step">5</div>
+  </div>
+
+<form id="bookingForm">
+
+    <!-- Step 1: Cek Ketersediaan -->
+    <div class="form-step active" id="step-1">
+        <h3>Step 1: Cek Ketersediaan</h3>
+        <label for="tanggal">Tanggal Booking</label>
+        <input type="date" id="tanggal" name="tanggal" required>
+
+        <label for="durasi">Durasi (1-3 hari)</label>
+        <select id="durasi" name="durasi" required>
+            <option value="1">1 Hari</option>
+            <option value="2">2 Hari</option>
+            <option value="3">3 Hari</option>
+        </select>
+
+        
+        <div id="paket-options">
+          <label for="paket1" id="label-hari-1">Hari Pertama</label>
+          <select id="paket1" name="paket1">
+              <option value="Ubud">Ubud</option>
+              <option value="Bedugul">Bedugul</option>
+              <option value="Lempuyang">Lempuyang</option>
+          </select>
+
+          <label for="paket2" id="label-hari-2" style="display: none;">Hari Kedua</label>
+          <select id="paket2" name="paket2" style="display: none;">
+              <option value="Ubud">Ubud</option>
+              <option value="Bedugul">Bedugul</option>
+              <option value="Lempuyang">Lempuyang</option>
+          </select>
+
+          <label for="paket3" id="label-hari-3" style="display: none;">Hari Ketiga</label>
+          <select id="paket3" name="paket3" style="display: none;">
+              <option value="Ubud">Ubud</option>
+              <option value="Bedugul">Bedugul</option>
+              <option value="Lempuyang">Lempuyang</option>
+          </select>
+        </div>
+
+        <label for="wilayah">Wilayah yang Dipilih</label>
+        <input type="text" id="wilayah" name="wilayah" readonly>
+
+        <button type="button" onclick="cekTanggal()">Cek Ketersediaan</button>
+        <button type="button" onclick="nextStep()">Lanjut</button>
+    </div>
+
+    <!-- Step 2: Isi Data Diri -->
+    <div class="form-step" id="step-2">
+        <h3>Step 2: Isi Data Diri</h3>
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telepon">Nomor Telepon</label>
+        <input type="tel" id="telepon" name="telepon" required>
+
+        <label for="alamat">Alamat</label>
+        <textarea id="alamat" name="alamat" rows="3" required></textarea>
+
+        <button type="button" onclick="prevStep()">Kembali</button>
+        <button type="button" onclick="nextStep()">Lanjut</button>
+    </div>
+
+    <div class="form-step" id="step-3">
+      <h3>Step 3: Konfirmasi Data</h3>
+
+      <label for="confirm-tanggal">Tanggal Booking</label>
+      <input type="text" id="confirm-tanggal" readonly>
+
+      <label for="confirm-durasi">Durasi</label>
+      <input type="text" id="confirm-durasi" readonly>
+
+      <label for="confirm-wilayah">Wilayah yang Dipilih</label>
+      <input type="text" id="confirm-wilayah" readonly>
+
+      <label for="confirm-nama">Nama Lengkap</label>
+      <input type="text" id="confirm-nama" readonly>
+
+      <label for="confirm-email">Email</label>
+      <input type="text" id="confirm-email" readonly>
+
+      <label for="confirm-telepon">Nomor Telepon</label>
+      <input type="text" id="confirm-telepon" readonly>
+
+      <label for="confirm-alamat">Alamat</label>
+      <input type="text" id="confirm-alamat" readonly>
+
+      <button type="button" onclick="prevStep()">Kembali</button>
+      <button type="button" onclick="nextStep()">Konfirmasi Booking</button>
+  </div>
+
+    <!-- Step 3: Pilih Metode Pembayaran -->
+    <div class="form-step" id="step-4">
+        <h3>Step 3: Pilih Metode Pembayaran</h3>
+        <label for="pembayaran">Metode Pembayaran</label>
+        <select id="pembayaran" name="pembayaran" required>
+            <option value="QRIS">QRIS</option>
+            <option value="Transfer BRI">Transfer Bank (BRI)</option>
+            <option value="DANA">DANA</option>
+        </select>
+
+        <div id="instruksi-pembayaran"></div>
+
+        <button type="button" onclick="prevStep()">Kembali</button>
+        <button type="button" onclick="nextStep()">Lanjut</button>
+    </div>
+
+    <!-- Step 4: Konfirmasi Pembayaran -->
+    <div class="form-step" id="step-5">
+        <h3>Step 4: Konfirmasi Pembayaran</h3>
+        <label for="bukti">Unggah Bukti Pembayaran</label>
+        <input type="file" id="bukti" name="bukti" required>
+
+        <label for="referensi">Nomor Referensi Pembayaran (opsional)</label>
+        <input type="text" id="referensi" name="referensi">
+
+        <button type="button" onclick="prevStep()">Kembali</button>
+        <button type="button" onclick="submitToStep6()">Submit</button>
+    </div>
+
+    <div class="form-step" id="step-6" style="display: none;">
+      <h3>Selamat!</h3>
+      <p>Anda sudah berhasil melakukan booking. Silakan menunggu konfirmasi dari admin.</p>
+        <a id="waLink" target="_blank" class="whatsapp-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" class="whatsapp-icon" width="20">
+            Kirim via WhatsApp
+        </a>
+
+        <button type="button" onclick="goToLandingPage()">Kembali</button>
+    </div>
+</form>
+
+
+<script src="/booking/js/script.js"></script>
+<script src="/booking/js/sheet.js"></script>
+
+</body>
+</html>
